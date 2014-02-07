@@ -53,6 +53,11 @@ class Offer extends \Admin\Controllers\BaseAuth
 	{
 		$f3 = \Base::instance();
 		$f3->set('pagetitle', 'Edit Offer');
+			
+		$model = new \Offers\Models\Offers;
+		
+		$f3->set('issuers', $model->getIssuers() );
+        $f3->set('merchants', $model->getMerchants() );
 		
 		
 		$view = new \Dsc\Template;

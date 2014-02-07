@@ -22,7 +22,7 @@
                                                                         echo date('M jS, Y', strtotime(@$item->{'offer.fromdate_end'}));
                                                                 } ?>
         </p>
-                                                                <p><?=strip_tags(@$item->{'offer.fromdate_start'})?><br>
+                                                                <p><?=strip_tags(@$item->{'offer.description'})?><br>
                                                                 </p>
         </li>
         <?php endif; ?>

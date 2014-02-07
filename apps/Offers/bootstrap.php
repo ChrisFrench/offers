@@ -41,7 +41,7 @@ switch ($global_app_name)
         
        // register all the routes
         $f3->route('GET|POST /admin/offers', '\Offers\Admin\Controllers\Offers->display');
-        $f3->route('GET|POST /admin/offers/@page', '\Offers\Admin\Controllers\Offers->display');
+        $f3->route('GET|POST /admin/offers/page/@page', '\Offers\Admin\Controllers\Offers->display');
         $f3->route('GET|POST /admin/offers/delete', '\Offers\Admin\Controllers\Offers->delete');
         $f3->route('GET /admin/offers/create', '\Offers\Admin\Controllers\Offer->create');
         $f3->route('POST /admin/offers/create', '\Offers\Admin\Controllers\Offer->add');

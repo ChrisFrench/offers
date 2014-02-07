@@ -1,5 +1,3 @@
-<?php var_dump($list); ?>
-
 <?php //echo \Dsc\Debug::dump( $state, false ); ?>
 <?php //echo \Dsc\Debug::dump( $list ); ?>
 
@@ -52,7 +50,7 @@
 			<tr class="filter-row">
 				
                 <th>
-                <select  id="group_filter" name="filter[filter.issuer.title]" class="form-control" >
+                <select  id="group_filter" name="filter[issuer.title]" class="form-control" >
                 <option value="">-Issuer Filter-</option>
                 <?php foreach (@$issuers as $title) : ?>
                 <option <?php if($state->get('filter.issuer.title') == $title) { echo 'selected'; } ?> value="<?=$title?>"><?=$title?></option>
@@ -60,7 +58,7 @@
             </select>
                 </th>
                 <th>
-<select  id="group_filter" name="filter[filter.merchant.title]" class="form-control" >
+<select  id="group_filter" name="filter[merchant.title]" class="form-control" >
                 <option value="">-Merchant Filter-</option>
                 <?php foreach (@$merchants as $title) : ?>
                 <option <?php if($state->get('filter.merchant.title') == $title) { echo 'selected'; } ?> value="<?=$title?>"><?=$title?></option>
