@@ -43,6 +43,10 @@ switch ($global_app_name)
         $f3->route('GET|POST /admin/offers', '\Offers\Admin\Controllers\Offers->display');
         $f3->route('GET|POST /admin/offers/page/@page', '\Offers\Admin\Controllers\Offers->display');
         $f3->route('GET|POST /admin/offers/delete', '\Offers\Admin\Controllers\Offers->delete');
+         $f3->route('GET|POST /admin/@type/offers', '\Offers\Admin\Controllers\Offers->display');
+        $f3->route('GET|POST /admin/@type/offers/page/@page', '\Offers\Admin\Controllers\Offers->display');
+        $f3->route('GET|POST /admin/@type/offers/delete', '\Offers\Admin\Controllers\Offers->delete');
+
         $f3->route('GET /admin/offers/create', '\Offers\Admin\Controllers\Offer->create');
         $f3->route('POST /admin/offers/create', '\Offers\Admin\Controllers\Offer->add');
         $f3->route('GET /admin/offers/view/@id', '\Offers\Admin\Controllers\Offer->read');

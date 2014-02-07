@@ -1,5 +1,5 @@
 {
-    "52f4256e967cd6.13783718": {
+    "52f53887a8f119.84480325": {
         "priority": 40,
         "key": "f3-assets",
         "title": "Media Assets",
@@ -18,7 +18,7 @@
             }
         ]
     },
-    "52f4256e97a3d1.97872174": {
+    "52f53887a92384.17717396": {
         "priority": 30,
         "key": "f3-blog",
         "title": "Blog",
@@ -47,7 +47,7 @@
             }
         ]
     },
-    "52f4256e97d191.15893125": {
+    "52f53887a959c0.13487249": {
         "priority": 40,
         "key": "f3-modules",
         "title": "Modules",
@@ -66,7 +66,7 @@
             }
         ]
     },
-    "52f4256e97fe40.05062659": {
+    "52f53887a98e62.99624344": {
         "priority": 30,
         "key": "fa-user",
         "title": "Users",
@@ -100,7 +100,7 @@
             }
         ]
     },
-    "52f4256e982ed9.73929935": {
+    "52f53887a9c934.97382115": {
         "priority": 30,
         "key": "fa-offers",
         "title": "Offers",
@@ -108,8 +108,18 @@
         "icon": "fa fa-offer",
         "children": [
             {
-                "title": "List",
+                "title": "List All",
                 "route": "\/admin\/offers",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "List Merchant Offers",
+                "route": "\/admin\/merchant\/offers",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "List Issuer Offers",
+                "route": "\/admin\/issuer\/offers",
                 "icon": "fa fa-list"
             },
             {
@@ -124,7 +134,7 @@
             }
         ]
     },
-    "52f4256e986500.15358533": {
+    "52f53887aa06f4.17341475": {
         "priority": 99,
         "title": "Navigation",
         "route": "",
@@ -155,7 +165,7 @@
             }
         ]
     },
-    "52f4256e988b83.29901637": {
+    "52f53887aa2d68.66468862": {
         "priority": 100,
         "title": "System",
         "route": "",

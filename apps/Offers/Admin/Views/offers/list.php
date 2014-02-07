@@ -38,8 +38,20 @@
     <table class="table table-striped table-bordered table-hover table-highlight table-checkable">
 		<thead>
 			<tr>
-                <th data-sortable="issuer.title">Issuer</th>
-                <th data-sortable="merchant.title">Merchant</th>
+                <?php switch (@$PARAMS['type']) {
+                    case 'merchant': 
+                    echo '<th data-sortable="merchant.title">Merchant</th>';
+                        break;
+                    case 'issuer':
+                       echo '<th data-sortable="issuer.title">Issuer</th>';
+                        break;
+                    default:
+                     echo '   <th data-sortable="issuer.title">Issuer</th>
+                <th data-sortable="merchant.title">Merchant</th>';
+                        break;
+                } ?>
+             
+                
                 <th>Offer</th>
 
                 <th data-sortable="offer.enddate_start">Start Date</th>
@@ -48,8 +60,37 @@
                
             </tr>
 			<tr class="filter-row">
-				
-                <th>
+				  <?php switch (@$PARAMS['type']) {
+                    case 'merchant': 
+                    ?>
+                     <th>
+<select  id="group_filter" name="filter[merchant.title]" class="form-control" >
+                <option value="">-Merchant Filter-</option>
+                <?php foreach (@$merchants as $title) : ?>
+                <option <?php if($state->get('filter.merchant.title') == $title) { echo 'selected'; } ?> value="<?=$title?>"><?=$title?></option>
+                <?php endforeach; ?>
+            </select>                </th>
+
+                    <?php
+
+                 
+                        break;
+                    case 'issuer':
+                       ?>
+   <th>
+                <select  id="group_filter" name="filter[issuer.title]" class="form-control" >
+                <option value="">-Issuer Filter-</option>
+                <?php foreach (@$issuers as $title) : ?>
+                <option <?php if($state->get('filter.issuer.title') == $title) { echo 'selected'; } ?> value="<?=$title?>"><?=$title?></option>
+                <?php endforeach; ?>
+            </select>
+                </th>
+
+                    <?php
+                        break;
+                    default:
+                     ?>
+                         <th>
                 <select  id="group_filter" name="filter[issuer.title]" class="form-control" >
                 <option value="">-Issuer Filter-</option>
                 <?php foreach (@$issuers as $title) : ?>
@@ -64,6 +105,16 @@
                 <option <?php if($state->get('filter.merchant.title') == $title) { echo 'selected'; } ?> value="<?=$title?>"><?=$title?></option>
                 <?php endforeach; ?>
             </select>                </th>
+
+
+                    <?php
+                        break;
+                } ?> 
+
+
+
+
+            
                 <th></th>
                 <th></th>
                 <th>
@@ -78,8 +129,35 @@
             <?php foreach ($list['subset'] as $item) { ?>
                 <tr>
 	                         
-                    <td class="">
-                    	<h5>
+                    
+                    <?php switch (@$PARAMS['type']) {
+                    case 'merchant': 
+                    ?>
+                     <td class="">
+                        <?php echo @$item->{'merchant.title'}; ?>
+                    </td>
+
+                    <?php
+
+                 
+                        break;
+                    case 'issuer':
+                       ?>
+  
+                  <td class="">
+                        <h5>
+                        <a href="./admin/offers/edit/<?php echo $item->id; ?>">
+                            <?php echo @$item->{'issuer.title'}; ?>
+                        </a>
+                        </h5>
+                    </td>
+
+                    <?php
+                        break;
+                    default:
+                     ?>
+                         <td class="">
+                        <h5>
                         <a href="./admin/offers/edit/<?php echo $item->id; ?>">
                             <?php echo @$item->{'issuer.title'}; ?>
                         </a>
@@ -88,14 +166,20 @@
                     <td class="">
                         <?php echo @$item->{'merchant.title'}; ?>
                     </td>
+               
+                    <?php
+                        break;
+                } ?> 
+
+
                     <td class="">
                        <?php echo @$item->{'offer.title'}; ?>
                     </td>
                     <td class="">
-                     
+                        <?php echo @$item->{'offer.fromdate_start'}; ?>
                     </td>
                     <td class="">
-                   
+                    <?php echo @$item->{'offer.fromdate_end'}; ?>
                         
                     </td>
                     <td class="text-center">

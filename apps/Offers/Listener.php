@@ -14,8 +14,10 @@ class Listener extends \Prefab
         	$mapper->route = '';
         	$mapper->icon = 'fa fa-offer';
         	$mapper->children = array(
-        			json_decode(json_encode(array( 'title'=>'List', 'route'=>'/admin/offers', 'icon'=>'fa fa-list' )))
-        			,json_decode(json_encode(array( 'title'=>'Add New Offer', 'route'=>'/admin/offers/create', 'icon'=>'fa fa-plus' )))
+        			json_decode(json_encode(array( 'title'=>'List All', 'route'=>'/admin/offers', 'icon'=>'fa fa-list' )))
+        			,json_decode(json_encode(array( 'title'=>'List Merchant Offers', 'route'=>'/admin/merchant/offers', 'icon'=>'fa fa-list' )))
+                    ,json_decode(json_encode(array( 'title'=>'List Issuer Offers', 'route'=>'/admin/issuer/offers', 'icon'=>'fa fa-list' )))
+                    ,json_decode(json_encode(array( 'title'=>'Add New Offer', 'route'=>'/admin/offers/create', 'icon'=>'fa fa-plus' )))
         			,json_decode(json_encode(array( 'title'=>'Detail', 'route'=>'/admin/offers/view', 'hidden'=>true ))
                     )
 

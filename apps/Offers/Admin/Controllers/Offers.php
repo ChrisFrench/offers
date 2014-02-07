@@ -5,21 +5,38 @@ class Offers extends \Admin\Controllers\BaseAuth
 {
     public function display()
     {
-        \Base::instance()->set('pagetitle', 'Offers');
-        \Base::instance()->set('subtitle', '');
+        $f3 = \Base::instance();
+        $f3->set('pagetitle', 'Offers');
+        $f3->set('subtitle', '');
     
         $model = new \Offers\Models\Offers;
+
+        if(!empty($f3->get('PARAMS.type'))) {
+            switch ($f3->get('PARAMS.type')) {
+                case 'merchant':
+                    $model->setState('filter.is_merchant', 1);
+                    break;
+                case 'issuer':
+                    $model->setState('filter.is_issuer', 1);
+                    break;
+                default:
+                    # code...
+                    break;
+            }
+        }
+
+
         $state = $model->populateState()->getState();
-        \Base::instance()->set('state', $state );
+        $f3->set('state', $state );
     
         $list = $model->paginate();
-        \Base::instance()->set('list', $list );
+        $f3->set('list', $list );
         
-        \Base::instance()->set('issuers', $model->getIssuers() );
-        \Base::instance()->set('merchants', $model->getMerchants() );
+        $f3->set('issuers', $model->getIssuers() );
+        $f3->set('merchants', $model->getMerchants() );
 
         $pagination = new \Dsc\Pagination($list['total'], $list['limit']);
-        \Base::instance()->set('pagination', $pagination );
+        $f3->set('pagination', $pagination );
               
         $view = new \Dsc\Template;
         echo $view->render('Offers/Admin/Views::offers/list.php');
