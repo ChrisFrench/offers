@@ -1,0 +1,201 @@
+{
+    "52f4256e967cd6.13783718": {
+        "priority": 40,
+        "key": "f3-assets",
+        "title": "Media Assets",
+        "route": "",
+        "icon": "fa fa-picture-o",
+        "children": [
+            {
+                "title": "Library",
+                "route": "\/admin\/assets",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New",
+                "route": "\/admin\/asset",
+                "icon": "fa fa-plus"
+            }
+        ]
+    },
+    "52f4256e97a3d1.97872174": {
+        "priority": 30,
+        "key": "f3-blog",
+        "title": "Blog",
+        "route": "",
+        "icon": "fa fa-ticket",
+        "children": [
+            {
+                "title": "Posts",
+                "route": "\/admin\/blog\/posts",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New",
+                "route": "\/admin\/blog\/post\/create",
+                "icon": "fa fa-plus"
+            },
+            {
+                "title": "Categories",
+                "route": "\/admin\/blog\/categories",
+                "icon": "fa fa-folder"
+            },
+            {
+                "title": "Add New",
+                "route": "\/admin\/blog\/category\/create",
+                "hidden": true
+            }
+        ]
+    },
+    "52f4256e97d191.15893125": {
+        "priority": 40,
+        "key": "f3-modules",
+        "title": "Modules",
+        "route": "",
+        "icon": "fa fa-building",
+        "children": [
+            {
+                "title": "List",
+                "route": "\/admin\/modules",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New",
+                "route": "\/admin\/module\/create",
+                "icon": "fa fa-plus"
+            }
+        ]
+    },
+    "52f4256e97fe40.05062659": {
+        "priority": 30,
+        "key": "fa-user",
+        "title": "Users",
+        "route": "",
+        "icon": "fa fa-user",
+        "children": [
+            {
+                "title": "List",
+                "route": "\/admin\/users",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New User",
+                "route": "\/admin\/user",
+                "icon": "fa fa-plus"
+            },
+            {
+                "title": "Detail",
+                "route": "\/admin\/user\/view",
+                "hidden": true
+            },
+            {
+                "title": "Groups",
+                "route": "\/admin\/users\/groups",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New Group",
+                "route": "\/admin\/users\/group",
+                "icon": "fa fa-plus"
+            }
+        ]
+    },
+    "52f4256e982ed9.73929935": {
+        "priority": 30,
+        "key": "fa-offers",
+        "title": "Offers",
+        "route": "",
+        "icon": "fa fa-offer",
+        "children": [
+            {
+                "title": "List",
+                "route": "\/admin\/offers",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New Offer",
+                "route": "\/admin\/offers\/create",
+                "icon": "fa fa-plus"
+            },
+            {
+                "title": "Detail",
+                "route": "\/admin\/offers\/view",
+                "hidden": true
+            }
+        ]
+    },
+    "52f4256e986500.15358533": {
+        "priority": 99,
+        "title": "Navigation",
+        "route": "",
+        "icon": "fa fa-tasks",
+        "children": [
+            {
+                "title": "Menus",
+                "route": "\/admin\/menus",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New Menu",
+                "route": "\/admin\/menu",
+                "icon": "fa fa-plus",
+                "hidden": true
+            },
+            {
+                "title": "Menu Items",
+                "route": "\/admin\/menus\/items",
+                "icon": "fa fa-sitemap",
+                "hidden": true
+            },
+            {
+                "title": "Add New Menu Item",
+                "route": "\/admin\/menus\/item",
+                "icon": "fa fa-plus",
+                "hidden": true
+            }
+        ]
+    },
+    "52f4256e988b83.29901637": {
+        "priority": 100,
+        "title": "System",
+        "route": "",
+        "icon": "fa fa-cogs",
+        "children": [
+            {
+                "title": "Settings",
+                "route": "\/admin\/settings",
+                "icon": "fa fa-cogs"
+            },
+            {
+                "title": "Rebuild Admin Menu",
+                "route": "\/admin\/system\/rebuildAdminMenu",
+                "icon": "fa fa-retweet"
+            },
+            {
+                "title": "Diagnostics",
+                "route": "\/admin\/system\/diagnostics",
+                "icon": "fa fa-heart"
+            },
+            {
+                "title": "Logs",
+                "route": "\/admin\/logs",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Log Detail",
+                "route": "\/admin\/log",
+                "hidden": true
+            },
+            {
+                "title": "Queue",
+                "route": "\/admin\/queue",
+                "icon": "fa fa-refresh"
+            },
+            {
+                "title": "Queue Detail",
+                "route": "\/admin\/queueitem",
+                "hidden": true
+            }
+        ]
+    }
+}
