@@ -51,7 +51,11 @@ switch ($global_app_name)
         }
         
         \Minify\Factory::registerPath($f3->get('PATH_ROOT') . "public/theme/");
-        \Minify\Factory::registerPath($f3->get('PATH_ROOT') . "public/theme/images/");       
+        \Minify\Factory::registerPath($f3->get('PATH_ROOT') . "public/theme/css/");
+        \Minify\Factory::registerPath($f3->get('PATH_ROOT') . "public/theme/css/images");
+        \Minify\Factory::registerPath($f3->get('PATH_ROOT') . "public/theme/css/img");
+        \Minify\Factory::registerPath($f3->get('PATH_ROOT') . "public/theme/images/");
+        \Minify\Factory::registerPath($f3->get('PATH_ROOT') . "public/theme/img/");       
        
         
         

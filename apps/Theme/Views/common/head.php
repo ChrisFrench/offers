@@ -10,26 +10,8 @@
 	<meta name="author" content="">
 
 
-
-    <link href="/theme/css/jquery.mobile-1.2.0.min.css" rel="stylesheet">
-    <link href="/theme/css/isis.css" rel="stylesheet">
-    <link href="/theme/css/idangerous.swiper.css" rel="stylesheet">
-    <link href="/theme/css/idangerous.swiper.scrollbar.css" rel="stylesheet">
-    <link href="/theme/css/simple-app.css" rel="stylesheet">
-    <link href="/theme/css/list.css" rel="stylesheet">
-
-
-
-  
-    <script src="/theme/js/jquery-1.8.3.min.js"></script>
-    <script src="/theme/js/jquery.mobile-1.2.0.min.js"></script>
-    <script src="theme/js/jquery.mobile.alphascroll.js"></script>
-    <script src="/theme/js/simple-app.js"></script>
-
-    
-
-
-
+    <link href="/minify/css" rel="stylesheet">
+    <script src="/minify/js"></script>
 
     <title><?php echo $this->app->get('meta.title'); ?></title>
 
