@@ -65,6 +65,9 @@ jQuery(document).ready(function(){
                             <option <?php if($flash->old('issuer.title') == $title) { echo 'selected'; } ?> value="<?=$title?>"><?=$title?></option>
                             <?php endforeach; ?>
                             </select>
+
+
+                           
                         </div>
                         <!-- /.col -->
         
@@ -90,6 +93,14 @@ jQuery(document).ready(function(){
                         <!-- /.col -->
         
                     </div>
+
+                     <label>Published:</label>
+
+                        <select name="published" class="form-control">
+                            <option value="-1" <?php if ($flash->old('published') == '-1') { echo "selected='selected'"; } ?>>Trashed</option>
+                            <option value="0" <?php if ($flash->old('published') == '0') { echo "selected='selected'"; } ?>>Unpublished</option>
+                            <option value="1" <?php if ($flash->old('published') == '1') { echo "selected='selected'"; } ?>>Published</option>
+                        </select>
                     <!-- /.form-group -->   
                                  
                 </div>
@@ -101,14 +112,23 @@ jQuery(document).ready(function(){
                         <label class="col-md-3">Merchant</label>
         
                         <div class="col-md-7">
-                <select  id="group_filter" name="merchant[title]" class="form-control" >
-                            <option value="">-Merchant Filter-</option>
-                            <?php foreach (@$merchants as $title) : ?>
-                            <option <?php if($flash->old('merchant.title') == $title) { echo 'selected'; } ?> value="<?=$title?>"><?=$title?></option>
-                            <?php endforeach; ?>
-                            </select>                        </div>
+                            <select  id="group_filter" name="merchant[title]" class="form-control" >
+                                <option value="">-Merchant Filter-</option>
+                                <?php foreach (@$merchants as $title) : ?>
+                                <option <?php if($flash->old('merchant.title') == $title) { echo 'selected'; } ?> value="<?=$title?>"><?=$title?></option>
+                                <?php endforeach; ?>
+                            </select>
+
+
+
+
+                        </div>
                         <!-- /.col -->
-        
+                    
+              
+                        
+                    
+                 
                     </div>
                     <!-- /.form-group -->
         
@@ -142,7 +162,7 @@ jQuery(document).ready(function(){
                         <div class="col-md-7">
                             <input type="text"  name="offer[title]" value="<?php echo $flash->old('offer.title'); ?>" class="form-control" />
                         </div>
-                        <br> <br>
+                    <br> <br>
                      <div class="col-md-7">
                     <div class="form-group">
                     <textarea name="offer[description]" class="form-control wysiwyg"><?php echo $flash->old('offer.description'); ?></textarea>

@@ -7,10 +7,15 @@ class Issuer extends Base
 	public function display() {
         \Base::instance()->set('pagetitle', 'Events');
         \Base::instance()->set('subtitle', '');
-        
+     
         $model = new \Offers\Models\Offers;
-        $model->setState('filter.is_issuer', 1);
+         
         $state = $model->populateState()->getState();
+      
+        $model->setState('filter.is_issuer', 1);
+        $model->setState('filter.published', 1);
+        $state = $model->populateState()->getState();
+
         \Base::instance()->set('state', $state );
         
         $list = $model->paginate();
@@ -37,7 +42,7 @@ class Issuer extends Base
         
         $model = new \Offers\Models\Offers;
         $model->setState('filter.issuer.slug', $f3->get('PARAMS.issuer') );
-        
+        $model->setState('filter.published', 1);
 
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );

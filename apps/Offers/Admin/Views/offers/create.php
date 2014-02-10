@@ -70,16 +70,7 @@ jQuery(document).ready(function(){
         
                     </div>
                     <!-- /.form-group -->
-        
-                    <div class="form-group">
-                        <label class="col-md-3">Issuer Slug</label>
-        
-                        <div class="col-md-7">
-                            <input type="text" disabled="disabled" name="issuer[slug]" value="<?php echo $flash->old('issuer.slug'); ?>" class="form-control" />
-                        </div>
-                        <!-- /.col -->
-        
-                    </div>
+    
                     <hr>
                      <div class="form-group">
                         <label class="col-md-3">New Issuer</label>
@@ -88,8 +79,18 @@ jQuery(document).ready(function(){
                             <input type="text"  name="issuer[new-title]" value="<?php echo $flash->old('issuer.new-title'); ?>" class="form-control" />
                         </div>
                         <!-- /.col -->
-        
+                    
+
+                      
+
                     </div>
+                     <label>Published:</label>
+
+                        <select name="published" class="form-control">
+                            <option value="-1" <?php if ($flash->old('published') == '-1') { echo "selected='selected'"; } ?>>Trashed</option>
+                            <option value="0" <?php if ($flash->old('published') == '0') { echo "selected='selected'"; } ?>>Unpublished</option>
+                            <option value="1" <?php if ($flash->old('published') == '1') { echo "selected='selected'"; } ?>>Published</option>
+                        </select>  
                     <!-- /.form-group -->   
                                  
                 </div>
@@ -112,21 +113,12 @@ jQuery(document).ready(function(){
                     </div>
                     <!-- /.form-group -->
         
-                    <div class="form-group">
-                        <label class="col-md-3">Merchant Slug</label>
-        
-                        <div class="col-md-7">
-                            <input type="text" disabled="disabled" name="issuer[slug]" value="<?php echo $flash->old('merchant.slug'); ?>" class="form-control" />
-                        </div>
-                        <!-- /.col -->
-        
-                    </div>
                    <hr>
                      <div class="form-group">
                         <label class="col-md-3">New Merchant</label>
         
                         <div class="col-md-7">
-                            <input type="text"  name="issuer[new-title]" value="<?php echo $flash->old('issuer.new-title'); ?>" class="form-control" />
+                            <input type="text"  name="merchant[new-title]" value="<?php echo $flash->old('merchant.new-title'); ?>" class="form-control" />
                         </div>
                         <!-- /.col -->
         

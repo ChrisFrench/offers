@@ -54,6 +54,12 @@ class Offers extends Base
          $this->filters['issuer'] = array( '$ne' => array() );
         }
 
+        $filter_published = $this->getState('filter.published');
+        if (strlen($filter_published))
+        {
+         $this->filters['published'] = (string) $filter_published ;
+        }
+
         $filter_is_merchant = $this->getState('filter.is_merchant');
         if (strlen($filter_is_merchant))
         {
