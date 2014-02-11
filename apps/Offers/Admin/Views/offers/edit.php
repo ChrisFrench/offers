@@ -171,23 +171,25 @@ jQuery(document).ready(function(){
             
         </div>
  <!-- /.tab-content -->
+           <!-- /.tab-content -->
              <label>Published:</label>
 
                         <select name="published" class="form-control">
+                            <option value="1" <?php if ($flash->old('published') == '1') { echo "selected='selected'"; } ?>>Published</option>
                             <option value="-1" <?php if ($flash->old('published') == '-1') { echo "selected='selected'"; } ?>>Trashed</option>
                             <option value="0" <?php if ($flash->old('published') == '0') { echo "selected='selected'"; } ?>>Unpublished</option>
-                            <option value="1" <?php if ($flash->old('published') == '1') { echo "selected='selected'"; } ?>>Published</option>
                         </select>  
-             <label class="col-md-2">From Date Start</label>
+
+             <label class="col-md-2">From Date Start</label><br>
         
                         <div class="col-md-7">
-                            <input type="text"  name="offer[fromdate_start]" value="<?php echo $flash->old('offer.fromdate_start'); ?>" class="form-control" />
-                        </div>
-              <label class="col-md-2">From Date End</label>
+                            <input type="text"  name="offer[fromdate_start]" placeholder="YYYY-MM-DD" value="<?php echo $flash->old('offer.fromdate_start'); ?>" class="form-control" />
+                        </div><br>
+              <label class="col-md-2">From Date End</label><br>
         
                         <div class="col-md-7">
-                            <input type="text"  name="offer[fromdate_end]" value="<?php echo $flash->old('offer.fromdate_end'); ?>" class="form-control" />
-                        </div>
+                            <input type="text"  name="offer[fromdate_end]" placeholder="YYYY-MM-DD" value="<?php echo $flash->old('offer.fromdate_end'); ?>" class="form-control" />
+                        </div>     
         
     </div>
 
