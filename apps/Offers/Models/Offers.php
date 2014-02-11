@@ -51,8 +51,32 @@ class Offers extends Base
         $filter_is_issuer = $this->getState('filter.is_issuer');
         if (strlen($filter_is_issuer))
         {
+
+
+
          $this->filters['issuer'] = array( '$ne' => array() );
         }
+
+
+        $filter_is_active = $this->getState('filter.is_active');
+        
+        /*if (strlen($filter_is_active))
+        {
+
+             $where = array();
+            $where[] = array('offer.fromdate_start'=> null );
+            $where[] = array('offer.fromdate_start'=>array( '$lte' => date('y-m-d') ));
+             $where[] = array('offer.fromdate_start'=> '0000-00-00');
+
+
+            $where[] = array('offer.fromdate_end'=> null );
+            $where[] = array('offer.fromdate_end'=> '0000-00-00');
+            $where[] = array('offer.fromdate_end'=>array( '$gte' => date('y-m-d') ));
+
+            var_dump($where);
+            die();
+            $this->filters['$or'] = $where;
+        }*/
 
         $filter_published = $this->getState('filter.published');
         if (strlen($filter_published))
@@ -81,6 +105,11 @@ class Offers extends Base
         }
        
         $filter_issuer_slug = $this->getState('filter.issuer.slug');
+
+        if (strlen($filter_issuer_slug))
+        {
+            $this->filters['issuer.slug'] = $filter_issuer_slug;
+        }
 
         if (strlen($filter_issuer_slug))
         {
@@ -147,6 +176,20 @@ class Offers extends Base
         
         return $this->save( $values, $options );
     }
+
+    public function save( $values, $options=array(), $mapper=null )
+    {
+        /*if (empty($values['offer']['fromdate_start'])) {
+            $values['offer']['fromdate_start'] = \Dsc\Mongo\Metastamp::getDate(  trim($values['offer']['fromdate_start']);
+        }
+        
+        if (!empty($values['offer']['fromdate_end'])) {           
+            $values['offer']['fromdate_end'] = \Dsc\Mongo\Metastamp::getDate( trim( $values['offer']['fromdate_end'] ) );
+        }*/
+    
+        return parent::save( $values, $options, $mapper );
+    }
+
 
 
     public function prepareItem($item) {

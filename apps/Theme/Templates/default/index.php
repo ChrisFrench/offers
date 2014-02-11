@@ -9,6 +9,7 @@
 		<?php // <tmpl type="system.messages" /> ?>
          <tmpl type="view" />
 		<!--/FOOTER -->
+		
 	</div>
 	<!--/PAGE -->
 	

@@ -6,7 +6,7 @@
                         <a href="http://isismst.com/verizon"  class="ui-btn-right" data-icon="bars"  >Menu</a>
                 </div>
                 <ul data-role="listview" data-inset="true" style="padding:20px;">
-               <?php foreach($list['subset'] as $item) : ?>
+               <?php foreach($list as $item) : ?>
                 <?php if(!empty($item->{'offer.title'})) : ?>
                 <li class="ui-btn">
                 <h2><?=strip_tags($item->{'offer.title'})?></h2>

@@ -10,23 +10,23 @@ class Merchant extends Base
         
         $model = new \Offers\Models\Offers;
         $model->setState('filter.is_merchant', 1);
+        $model->setState('filter.is_active', 1);
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
         
-        $list = $model->paginate();
+        $list = $model->getList();
 
+       
         //for a lack of a better way
         $groups = array();
-        foreach ($list['subset'] as $document) {
+        foreach ($list as $document) {
            $groups[$document->{'merchant.slug'}][] = $document;
             # code...
         }
 
         \Base::instance()->set('list', $groups );
         
-        $pagination = new \Dsc\Pagination($list['total'], $list['limit']);       
-        \Base::instance()->set('pagination', $pagination );
-        
+       
         $view = new \Dsc\Template;
         echo $view->render('Offers/Site/Views::merchants/list.php');
     }
@@ -42,12 +42,10 @@ class Merchant extends Base
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
         
-        $list = $model->paginate();
+        $list = $model->getList();
         \Base::instance()->set('list', $list );
         
-        $pagination = new \Dsc\Pagination($list['total'], $list['limit']);       
-        \Base::instance()->set('pagination', $pagination );
-        
+    
         
         $view = new \Dsc\Template;
         echo $view->render('Offers/Site/Views::merchants/offers.php');
