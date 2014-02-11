@@ -1,5 +1,5 @@
 <?php 
-namespace Msft\Models\Prefabs;
+namespace Offers\Models\Prefabs;
 
 class Offer extends \Dsc\Prefabs
 {

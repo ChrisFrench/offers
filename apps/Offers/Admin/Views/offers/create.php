@@ -105,6 +105,22 @@ jQuery(document).ready(function(){
                         <!-- /.col -->
         
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-3">Payment Type</label>
+        
+                        <div class="col-md-7">
+                        <?php $types = array('Payments Only', 'Smart Tap'); ?>
+                        <select  id="group_filter" name="merchant[payment_type]" class="form-control" >
+                                <option value="">-Select Payment Type-</option>
+                                <?php foreach (@$types as $type) : ?>
+                                <option <?php if($flash->old('merchant.payment_type') == $type) { echo 'selected'; } ?> value="<?=$type?>"><?=$type?></option>
+                                  <?php endforeach; ?>
+                        </select>
+                       
+                     </div>
+                        <!-- /.col -->
+        
+                    </div>
                     <!-- /.form-group -->
         
                    <hr>
@@ -122,18 +138,18 @@ jQuery(document).ready(function(){
                 <!-- /.tab-pane -->
 
                  <div class="tab-pane" id="tab-offer">
-                      
-                    <label class="col-md-2">Offer Title</label>
+                    <div class="form-group">  
+                     <label class="col-md-2">Offer Title</label>
         
                         <div class="col-md-7">
                             <input type="text"  name="offer[title]" value="<?php echo $flash->old('offer.title'); ?>" class="form-control" />
                         </div>
                         <br> <br>
-                     <div class="col-md-7">
-                    <div class="form-group">
-                    <textarea name="offer[description]" class="form-control wysiwyg"><?php echo $flash->old('offer.description'); ?></textarea>
+                     <div class="col-md-9">
+                        
+                        <textarea name="offer[description]" class="form-control wysiwyg"><?php echo $flash->old('offer.description'); ?></textarea>
+                        </div>
                     </div>
-
 
                     
                 <!-- /.tab-pane -->
@@ -158,17 +174,17 @@ jQuery(document).ready(function(){
              <label class="col-md-3">Start Date </label>
         
                         <div class="col-md-7">
-                        <input type="text"  name="offer[fromdate_start]" value="<?php echo $flash->old('offer.fromdate_start', date('Y-m-d') ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true"/>
+                        <input type="text"  name="offer[fromdate_start]" value="<?php echo $flash->old('offer.fromdate_start' ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true"/>
                         </div>
                         </div>
-                         <div class="form-group">
-              <label class="col-md-3">End Date </label><br>
-        
-                        <div class="col-md-7">
-                        <input type="text"  name="offer[fromdate_end]" value="<?php echo $flash->old('offer.fromdate_end', date('Y-m-d') ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true"/>
-                        </div>     
-                        </div>
+                             <div class="form-group">
+                  <label class="col-md-3">End Date </label><br>
+            
+                                <div class="col-md-7">
+                                <input type="text"  name="offer[fromdate_end]" value="<?php echo $flash->old('offer.fromdate_end' ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true"/>
+                                </div>     
+                            </div>
          
-    </div>
+        </div>
 
 </form>

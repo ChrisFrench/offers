@@ -14,9 +14,11 @@ class Offers extends \Admin\Controllers\BaseAuth
         if(!empty($f3->get('PARAMS.type'))) {
             switch ($f3->get('PARAMS.type')) {
                 case 'merchant':
+                    $model->emptyState();
                     $model->setState('filter.is_merchant', 1);
                     break;
                 case 'issuer':
+                     $model->emptyState();
                     $model->setState('filter.is_issuer', 1);
                     break;
                 default:

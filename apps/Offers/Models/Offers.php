@@ -17,7 +17,7 @@ class Offers extends Base
         parent::__construct($config);
     }
 
-    public function getPrefab() {
+    public function prefab() {
         $prefab = New \Offers\Models\Prefabs\Offer();
         return $prefab;
     }
@@ -139,6 +139,13 @@ class Offers extends Base
         $merchants = array_values( array_filter( $merchants ) );
     
         return $merchants;
+    }
+
+    public function create( $values, $options=array() )
+    {
+        $values = array_merge( $this->prefab()->cast(), $values );
+        
+        return $this->save( $values, $options );
     }
 
 
