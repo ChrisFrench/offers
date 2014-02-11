@@ -142,25 +142,33 @@ jQuery(document).ready(function(){
             </div>
           
         </div>
-          <!-- /.tab-content -->
-             <label>Published:</label>
-
-                        <select name="published" class="form-control">
+       <!-- /.tab-content -->
+       <hr>
+            <div class="form-group">
+             <label class="col-md-3">Published:</label>
+             <div class="col-md-7">
+                        <select name="published" class="form-control" >
                             <option value="1" <?php if ($flash->old('published') == '1') { echo "selected='selected'"; } ?>>Published</option>
                             <option value="-1" <?php if ($flash->old('published') == '-1') { echo "selected='selected'"; } ?>>Trashed</option>
                             <option value="0" <?php if ($flash->old('published') == '0') { echo "selected='selected'"; } ?>>Unpublished</option>
                         </select>  
-
-             <label class="col-md-2">From Date Start</label><br>
+                        </div>
+                        </div>
+                         <div class="form-group">
+             <label class="col-md-3">Start Date </label>
         
                         <div class="col-md-7">
-                            <input type="text"  name="offer[fromdate_start]" placeholder="YYYY-MM-DD" value="<?php echo $flash->old('offer.fromdate_start'); ?>" class="form-control" />
-                        </div><br>
-              <label class="col-md-2">From Date End</label><br>
+                        <input type="text"  name="offer[fromdate_start]" value="<?php echo $flash->old('offer.fromdate_start', date('Y-m-d') ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true"/>
+                        </div>
+                        </div>
+                         <div class="form-group">
+              <label class="col-md-3">End Date </label><br>
         
                         <div class="col-md-7">
-                            <input type="text"  name="offer[fromdate_end]" placeholder="YYYY-MM-DD" value="<?php echo $flash->old('offer.fromdate_end'); ?>" class="form-control" />
-                        </div>           
+                        <input type="text"  name="offer[fromdate_end]" value="<?php echo $flash->old('offer.fromdate_end', date('Y-m-d') ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true"/>
+                        </div>     
+                        </div>
+         
     </div>
 
 </form>
