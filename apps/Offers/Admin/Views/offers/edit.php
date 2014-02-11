@@ -94,14 +94,7 @@ jQuery(document).ready(function(){
         
                     </div>
 
-                     <label>Published:</label>
-
-                        <select name="published" class="form-control">
-                            <option value="-1" <?php if ($flash->old('published') == '-1') { echo "selected='selected'"; } ?>>Trashed</option>
-                            <option value="0" <?php if ($flash->old('published') == '0') { echo "selected='selected'"; } ?>>Unpublished</option>
-                            <option value="1" <?php if ($flash->old('published') == '1') { echo "selected='selected'"; } ?>>Published</option>
-                        </select>
-                    <!-- /.form-group -->   
+                
                                  
                 </div>
                 <!-- /.tab-pane -->
@@ -177,7 +170,24 @@ jQuery(document).ready(function(){
             <!-- /.tab-content -->
             
         </div>
+ <!-- /.tab-content -->
+             <label>Published:</label>
 
+                        <select name="published" class="form-control">
+                            <option value="-1" <?php if ($flash->old('published') == '-1') { echo "selected='selected'"; } ?>>Trashed</option>
+                            <option value="0" <?php if ($flash->old('published') == '0') { echo "selected='selected'"; } ?>>Unpublished</option>
+                            <option value="1" <?php if ($flash->old('published') == '1') { echo "selected='selected'"; } ?>>Published</option>
+                        </select>  
+             <label class="col-md-2">From Date Start</label>
+        
+                        <div class="col-md-7">
+                            <input type="text"  name="offer[fromdate_start]" value="<?php echo $flash->old('offer.fromdate_start'); ?>" class="form-control" />
+                        </div>
+              <label class="col-md-2">From Date End</label>
+        
+                        <div class="col-md-7">
+                            <input type="text"  name="offer[fromdate_end]" value="<?php echo $flash->old('offer.fromdate_end'); ?>" class="form-control" />
+                        </div>
         
     </div>
 
