@@ -72,14 +72,20 @@ class Offer extends \Admin\Controllers\BaseAuth
         $model = $this->getModel();
         
         if(!empty($data['issuer']['new-title'])) {
-        	   $data['issuer']['title'] = $data['issuer']['new-title'];	
-        	   $data['issuer']['slug'] = $this->makeAlias($data['issuer']['new-title']);
+        	   $data['issuer']['title'] = $data['issuer']['new-title'];		   
         }
 
         if(!empty($data['merchant']['new-title'])) {
         	   $data['merchant']['title'] = $data['merchant']['new-title'];	
-        	   $data['merchant']['slug'] = $this->makeAlias($data['merchant']['new-title']);
         }
+
+        if(empty($data['merchant']['title'])) {
+         $data['merchant']['slug'] = $this->makeAlias($data['merchant']['title']);   
+        }
+        if(empty($data['issuer']['title'])) {
+         $data['issuer']['slug'] = $this->makeAlias($data['issuer']['title']);   
+        }
+        
      
         $data['merchant'] = array_filter($data['merchant']);
         $data['issuer'] = array_filter($data['issuer']);

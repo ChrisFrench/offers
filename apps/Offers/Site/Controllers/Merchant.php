@@ -10,7 +10,7 @@ class Merchant extends Base
         
         $model = new \Offers\Models\Offers;
         $model->setState('filter.is_merchant', 1);
-        $model->setState('filter.is_active', 1);
+        $model->setState('filter.published', 1);
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
         

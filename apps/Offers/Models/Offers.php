@@ -4,13 +4,13 @@ namespace Offers\Models;
 class Offers extends Base   
 {
     protected $collection = 'offers';
-    protected $default_ordering_direction = '1';
-    protected $default_ordering_field = 'type';
+    protected $default_ordering_direction = '-1';
+    protected $default_ordering_field = 'merchant.title';
 
     public function __construct($config=array())
     {
         $config['filter_fields'] = array(
-            'name', 'start_date', 'end_date'
+            'merchant.title', 'issuer.title', 'end_date'
         );
         $config['order_directions'] = array('1', '-1');
         

@@ -9,7 +9,7 @@
 
 
 							  <div class="ui-bar">
-							   <h2><b>Issuers</b></h2>
+							   <h2><b>Merchants</b></h2>
 							  </div>
 				</div>
 
