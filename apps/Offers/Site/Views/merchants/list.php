@@ -16,7 +16,20 @@
 			
 					<div data-role="content">
 						<ul id="mylistview" data-role="listview" data-autodividers="true">
-							
+
+
+<?php foreach ($featured as $item) :  ?>
+<li>
+															<a href="<?php echo $PARAMS[0] .'/' ?><?=strip_tags(@$item[0]->{'merchant.slug'})?>"> 
+															
+																<div class="ui-btn-text">
+															 		<h3><?=strip_tags(@$item[0]->{'merchant.title'})?></h3>
+																	<div class="card_name"> <?=strip_tags(@$item[0]->{'merchant.payment_type'})?></div>
+																</div>
+															</a>	
+
+																</li>
+<?php  endforeach; ?>									
 <?php foreach ($list as $group) :  ?>
 <li>
 															<a href="<?php echo $PARAMS[0] .'/' ?><?=strip_tags(@$group[0]->{'merchant.slug'})?>"> 

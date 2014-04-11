@@ -166,9 +166,13 @@ jQuery(document).ready(function(){
                      <label class="col-md-2">Offer Title</label>
         
                         <div class="col-md-7">
+                   
                             <input type="text"  name="offer[title]" value="<?php echo $flash->old('offer.title'); ?>" class="form-control" />
                         </div>
                         <br> <br>
+                       
+        
+                        
                      <div class="col-md-9">
                         
                         <textarea name="offer[description]" class="form-control wysiwyg"><?php echo $flash->old('offer.description'); ?></textarea>
@@ -188,6 +192,14 @@ jQuery(document).ready(function(){
  <!-- /.tab-content -->
   <hr>
             <div class="form-group">
+
+              <label class="col-md-3">Featured:</label>
+                     <div class="col-md-7">
+                       <input type="radio"  name="offer[featured]" value="1"  <?php if ($flash->old('offer.featured') == '1') { echo "checked='checked'"; } ?>  /> Featured 
+                            <input type="radio"  name="offer[featured]" value="" <?php if ($flash->old('offer.featured') == '') { echo "checked='checked'"; } ?>   /> No Featured <br>
+                        </div>   
+                        </div>        
+                          <div class="form-group">
              <label class="col-md-3">Published:</label>
              <div class="col-md-7">
                         <select name="published" class="form-control" >
@@ -205,7 +217,7 @@ jQuery(document).ready(function(){
                         </div>
                         </div>
                          <div class="form-group">
-              <label class="col-md-3">End Date </label><br>
+              <label class="col-md-3">End Date </label>
         
                         <div class="col-md-7">
                         <input type="text"  name="offer[fromdate_end]" value="<?php echo $flash->old('offer.fromdate_end', date('Y-m-d') ); ?>" class="ui-datepicker form-control" type="text" data-date-format="yyyy-mm-dd" data-date-today-highlight="true" data-date-today-btn="true"/>

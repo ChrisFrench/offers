@@ -18,12 +18,28 @@ class Merchant extends Base
 
        
         //for a lack of a better way
+        $featured = array();
         $groups = array();
         foreach ($list as $document) {
-           $groups[$document->{'merchant.slug'}][] = $document;
-            # code...
+        
+            if($document->{'offer.featured'}) {
+  
+                $featured[$document->{'merchant.slug'}][] = $document;
+                    foreach ($list as $key => $value) {
+                     if($document->{'merchant.slug'} == $value->{'merchant.slug'} ) {
+                       unset($list[$key]);
+                     }   
+                    }
+          //      unset($groups[$document->{'merchant.slug'}]);
+
+            } else {
+               $groups[$document->{'merchant.slug'}][] = $document;
+          
+            }
+
         }
 
+        \Base::instance()->set('featured', $featured );
         \Base::instance()->set('list', $groups );
         
        
@@ -37,8 +53,7 @@ class Merchant extends Base
         
         $model = new \Offers\Models\Offers;
         $model->setState('filter.merchant.slug', $f3->get('PARAMS.merchant') );
-        
-
+    
         $state = $model->populateState()->getState();
         \Base::instance()->set('state', $state );
         
